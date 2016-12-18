@@ -1,19 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
-
 ## The objective of the following two functions is to provide functionality 
-## to store a matrix and compute its inverse, caching the inverse inverse to avoid
+## to store a matrix and compute its inverse, caching the inverse to avoid
 ## repeating expensive computing inverse alogrithms.
 
-
-## Write a short comment describing this function
 ## makeCacheMatrix is a function that creates four functions to get and
 ## set the values of the matrix and its inverse in the global environment.
-# note that this function doesn't compute the inverted matrix, it simply retrieves
-# it from the cache.
-# Function cacheSolve computes the inverted matrix.
+# Note that this function doesn't compute the inverted matrix, it simply retrieves
+# it from the cache. Use function cacheSolve to compute the inverted matrix.
 #
-# Example: 
+# Example:
 # theMatrixObj <- makeCacheMatrix(x = matrix(rnorm(16), 4, 4)) # to create the matrix obj
 # cacheSolve(theMatrixObj) # to generate the inverse
 makeCacheMatrix <- function(x = matrix()) {
@@ -37,10 +31,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 }
 
-## cacheSolve takes the matrix object as an argument.
-## it checks if the inverted matrix has been computed and stored in the cache.
-## if not, it computes it and stores it in a cached variable.
-## It returns the inverted matrix from the cached variable.
+## cacheSolve takes the matrix object as an argument, it checks if the inverted 
+## matrix has been computed and stored in the cache.
+## if not, it computes it and stores the inverted matrix itin a cached variable.
+## It finally returns the inverted matrix from the cache variable.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 	if (is.null(x$getInverse())) {
